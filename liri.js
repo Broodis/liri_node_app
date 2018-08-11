@@ -50,7 +50,17 @@ function spotifyStuff() {
             else {
                 throw error;
             }
-        })
-    };
-
+        });
+    }
+    else if (choice !== undefined) {
+        spotify.search({ type: "track", query: choice }, function (error, data) {
+            if (!error) {
+                displaySpotify(data);
+            }
+            else {
+                throw error;
+            }
+        });
+    
+    }
 }
